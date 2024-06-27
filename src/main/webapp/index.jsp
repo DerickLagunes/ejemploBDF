@@ -26,5 +26,6 @@
         <input type="submit" value="Iniciar sesión">
     </form>
     <a href="registrarUsuario.jsp">Registrar nuevo usuario</a>
+    <a href="gestionUsuario.jsp">Ver los usuarios</a>
 </body>
 </html>

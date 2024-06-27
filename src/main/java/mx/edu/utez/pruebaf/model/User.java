@@ -6,7 +6,7 @@ public class User {
     private String contra;
     private String correo;
     private String codigo;
-    private boolean estado;
+    private boolean estado; //Delete
 
     //Constructor vacio
     public User(){}

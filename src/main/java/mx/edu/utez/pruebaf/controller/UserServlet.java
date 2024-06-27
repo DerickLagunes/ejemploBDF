@@ -19,7 +19,13 @@ public class UserServlet extends HttpServlet{
 
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        //Porque estamos mandando un "?" es una request GET
+        int id = Integer.parseInt(req.getParameter("id"));
+        UserDao dao = new UserDao();
+        User usuario = dao.getOne(id);
+        HttpSession sesion = req.getSession();
+        sesion.setAttribute("usuario", usuario);
+        resp.sendRedirect("registrarUsuario.jsp");
     }
 
     //Normalmente siempre ocupen el método doPost

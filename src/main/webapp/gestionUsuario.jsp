@@ -18,7 +18,8 @@
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Estado</th>
-                <th colspan="2">Acciones</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>

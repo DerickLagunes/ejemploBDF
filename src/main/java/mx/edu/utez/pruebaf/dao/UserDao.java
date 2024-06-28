@@ -24,6 +24,7 @@ public class UserDao {
                 u.setNombre(rs.getString("nombre"));
                 u.setContra(rs.getString("contra"));
             }
+            con.close();
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -46,6 +47,7 @@ public class UserDao {
                 //Si se hizo la inserción
                 respuesta = true;
             }
+            con.close();
         }catch(SQLException e){
             e.printStackTrace();
         }
@@ -69,6 +71,7 @@ public class UserDao {
                 u.setEstado(rs.getBoolean("estado"));
                 lista.add(u);
             }
+            con.close();
         }catch(SQLException e){
             e.printStackTrace();
         }
@@ -90,6 +93,7 @@ public class UserDao {
                 //Que si se hizo la modificación o modificaciones
                 flag = true;
             }
+            con.close();
         }catch(SQLException e){
             e.printStackTrace();
         }
@@ -110,6 +114,7 @@ public class UserDao {
                 u.setCorreo(rs.getString("correo"));
                 u.setId(rs.getInt("id"));
             }
+            con.close();
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -117,6 +122,38 @@ public class UserDao {
     }
 
     //Delete
+    public boolean deleteFisico(int id) {
+        boolean flag = false;
+        String query = "delete from users where id = ?";
+        try{
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            if(ps.executeUpdate()>0){
+                flag = true;
+            }
+            con.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return flag;
+    }
 
+    public boolean deleteLogico(int id) {
+        boolean flag = false;
+        String query = "update users set estado = false where id = ?";
+        try{
+            Connection con = DatabaseConnectionManager.getConnection();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            if(ps.executeUpdate()>0){
+                flag = true;
+            }
+            con.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return flag;
+    }
 
 }

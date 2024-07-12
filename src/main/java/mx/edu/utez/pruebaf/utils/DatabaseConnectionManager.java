@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DatabaseConnectionManager {
-    private static final String JDBC_URL = "jdbc:mysql://192.168.110.250:3306/activos";
+    private static final String JDBC_URL = "jdbc:mysql://192.168.110.9:3306/activos";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
 

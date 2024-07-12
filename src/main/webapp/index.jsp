@@ -27,5 +27,9 @@
     </form>
     <a href="registrarUsuario.jsp">Registrar nuevo usuario</a>
     <a href="gestionUsuario.jsp">Ver los usuarios</a>
+    <br><br>
+    <a href="ejemploJSTL">Ejemplo de JSTL</a>
+    <br>
+    <a href="ejemploXHTMLRequest.jsp">Ejemplo de XHTMLRequest</a>
 </body>
 </html>
